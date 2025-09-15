@@ -1,8 +1,5 @@
 // Write your solution in this file!
-let employee = {
-  name: "Jeff",
-  address: "Nairobi",
-};
+let employee = {};
 
 function updateEmployeeWithKeyAndValue(employeeobj, key, value) {
   return Object.assign({}, employeeobj, { [key]: value });
