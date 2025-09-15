@@ -1,40 +1,28 @@
 // Write your solution in this file!
-let employee = {
+const employee = {
   name: "Jeff",
   streetAddress: "Nairobi",
 };
 
-// Step 2: Non-destructive update
-function updateEmployeeWithKeyAndValue(employeeObj, key, value) {
+function updateEmployeeWithKeyAndValue(employee, key, value) {
   return {
-    ...employeeObj,
+    ...employee,
     [key]: value,
   };
 }
 
-// Step 3: Destructive update
-function destructivelyUpdateEmployeeWithKeyAndValue(employeeObj, key, value) {
-  employeeObj[key] = value;
-  return employeeObj;
+function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value) {
+  employee[key] = value;
+  return employee;
 }
 
-// Step 4: Non-destructive delete
-function deleteFromEmployeeByKey(employeeObj, key) {
-  const { [key]: _, ...newEmployee } = employeeObj;
+function deleteFromEmployeeByKey(employee, key) {
+  const newEmployee = { ...employee };
+  delete newEmployee[key];
   return newEmployee;
 }
 
-// Step 5: Destructive delete
-function destructivelyDeleteFromEmployeeByKey(employeeObj, key) {
-  delete employeeObj[key];
-  return employeeObj;
+function destructivelyDeleteFromEmployeeByKey(employee, key) {
+  delete employee[key];
+  return employee;
 }
-
-// Step 6: Export everything
-module.exports = {
-  employee,
-  updateEmployeeWithKeyAndValue,
-  destructivelyUpdateEmployeeWithKeyAndValue,
-  deleteFromEmployeeByKey,
-  destructivelyDeleteFromEmployeeByKey,
-};
